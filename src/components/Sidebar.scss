@@ -6,6 +6,27 @@
   border-right: 1px solid #D3D3D3;
   box-sizing: border-box;
   &-icons {
-    padding: 50px 15px;
+    padding: 50px 0;
+  }
+  &-route {
+    display: flex;
+    &-active {
+      display: flex;
+      .MuiSvgIcon-root {
+        fill: blue;
+      }
+    }
+    &-bar {
+      width: 10px;
+      height: 40px;
+      margin-right: 10px;
+      &-active {
+        width: 10px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 0 8px 8px 0;
+        background-color: blue;
+      }
+    }
   }
 }

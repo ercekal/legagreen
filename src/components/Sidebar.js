@@ -13,45 +13,49 @@ import { Dashboard,
   CardGiftcard,
   Settings,
   SettingsInputComponent,
-  RouterSharp
 } from '@material-ui/icons';
 import './Sidebar.scss'
 import Logo from '../logo.png'
 
+const style = { fontSize: 40, color: 'gray' }
 const routes = [
   {
-    icon: <Dashboard style={{ fontSize: 40 }} />,
+    icon: <Dashboard style={style} />,
     to: '/'
   },
   {
-    icon: <OpenInBrowser style={{ fontSize: 40 }} />,
+    icon: <OpenInBrowser style={style} />,
     to: '/open'
   },
   {
-    icon: <Polymer style={{ fontSize: 40 }} />,
+    icon: <Polymer style={style} />,
     to: '/polymer'
   },
   {
-    icon: <PermDataSetting style={{ fontSize: 40 }} />,
+    icon: <PermDataSetting style={style} />,
     to: '/perm'
   },
   {
-    icon: <CardGiftcard style={{ fontSize: 40 }} />,
+    icon: <CardGiftcard style={style} />,
     to: '/gift'
   },
   {
-    icon: <Settings style={{ fontSize: 40 }} />,
+    icon: <Settings style={style} />,
     to: '/settings'
   },
   {
-    icon: <SettingsInputComponent style={{ fontSize: 40 }} />,
+    icon: <SettingsInputComponent style={style} />,
     to: '/filters'
   },
 ]
 
 const IconRoute = ({icon, to}) => {
+  const location = useLocation()
+  const active = location.pathname === to
+  console.log('location: ', location);
   return (
-    <div>
+    <div className={`sidebar-route${active ? '-active' : ''}`}>
+      <div className={`sidebar-route-bar${active ? '-active' : ''}`} />
       <Link to={to}>{icon}</Link>
     </div>
   )
@@ -68,4 +72,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default withRouter(Sidebar)

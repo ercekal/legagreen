@@ -13,7 +13,6 @@ function App() {
         <div>
           <Header />
         </div>
-
     </Router>
   );
 }
