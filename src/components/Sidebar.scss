@@ -1,0 +1,11 @@
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #D3D3D3;
+  box-sizing: border-box;
+  &-icons {
+    padding: 50px 15px;
+  }
+}
