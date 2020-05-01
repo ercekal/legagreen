@@ -1,10 +1,8 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  useHistory, withRouter, useLocation
+  withRouter,
+  useLocation
 } from "react-router-dom";
 import { Dashboard,
   OpenInBrowser,
@@ -17,7 +15,7 @@ import { Dashboard,
 import './Sidebar.scss'
 import Logo from '../logo.png'
 
-const style = { fontSize: 40, color: 'gray' }
+const style = { fontSize: 40, color: 'gray', padding: '10px 0' }
 const routes = [
   {
     icon: <Dashboard style={style} />,
@@ -52,7 +50,6 @@ const routes = [
 const IconRoute = ({icon, to}) => {
   const location = useLocation()
   const active = location.pathname === to
-  console.log('location: ', location);
   return (
     <div className={`sidebar-route${active ? '-active' : ''}`}>
       <div className={`sidebar-route-bar${active ? '-active' : ''}`} />
@@ -68,6 +65,7 @@ const Sidebar = () => {
       <div className='sidebar-icons'>
         {routes.map(r => IconRoute(r))}
       </div>
+      <div className='sidebar-account'></div>
     </div>
   )
 }
