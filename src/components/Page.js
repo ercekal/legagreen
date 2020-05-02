@@ -36,6 +36,7 @@ const DATA = [{
 }
 ]
 const Page = ({searchInput}) => {
+  // filters the data based on the search input
   const results = searchInput === '' ? DATA : DATA.filter((obj)=>{
     return Object.keys(obj).reduce((acc, curr)=>{
           return acc || obj[curr].toLowerCase().includes(searchInput);

@@ -70,6 +70,7 @@ const Sidebar = ({onToggle}) => {
         </div>
       </div>
       <div className='Sidebar-bottom'>
+        {/* opens the account sidebar  when clicked */}
         <div className='Sidebar-account' onClick={onToggle}/>
       </div>
     </div>

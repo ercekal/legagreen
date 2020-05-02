@@ -9,7 +9,6 @@ const Card = ({info: {title, type, text, author, image}}) => {
         <div className='Card-type'>{type}</div>
         <div className='Card-text'>{text}</div>
       </div>
-
       <div className='Card-bottom'>
         <img src={image} alt='img' />
         <div>{author}</div>

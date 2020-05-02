@@ -11,6 +11,9 @@ const Search = ({onSearchData}) => {
     e.preventDefault()
     return onSearchData(input)
   }
+
+  // searches both with pressing enter and clicking on the search icon
+
   return (
     <div className='Search'>
       <form onSubmit={e => onSubmit(e)}>

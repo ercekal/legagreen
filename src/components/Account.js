@@ -2,6 +2,7 @@ import React from 'react';
 import './Account.scss'
 
 const Account = () => {
+  // we don't get any props from auth hence below details are added statically
   return (
     <div className='Account'>
       <div className='Account-top'>

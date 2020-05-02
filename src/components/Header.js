@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import {
-  withRouter,
-  useLocation
-} from "react-router-dom";
+import {withRouter, useLocation} from "react-router-dom";
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import Search from './Search'
 import './Header.scss'
-import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const Header = () => {
+  // uses Hooks to toggle the notification icon
   const [clicked, setClicked] = useState(false)
+  // gets the page title in header from router path
   const location = useLocation()
   return (
     <div className='Header'>
