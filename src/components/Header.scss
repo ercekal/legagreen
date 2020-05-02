@@ -1,6 +1,17 @@
 .Header {
-  height: 80px;
+  height: 60px;
   display: flex;
-  width: 100%;
-  background-color: blue;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 60px);
+  font-size: 32px;
+  font-weight: 500;
+  padding: 10px 0 10px 30px;
+  &-right {
+    display: flex;
+    align-items: center;
+  }
+  &-notificationIcon {
+    cursor: pointer;
+  }
 }
