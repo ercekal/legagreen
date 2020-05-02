@@ -1,13 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import {
   BrowserRouter as Router,
-  Switch,
   Route
 } from "react-router-dom";
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import Page from './components/Page'
-import './App.css'
+import Account from './components/Account'
+import './App.scss'
 
 const routes = [
   {
@@ -40,16 +41,14 @@ const routes = [
     component: Page
   }
 ]
-function App() {
+function App({openToggle}) {
   return (
     <Router>
       <div className='App'>
         <Sidebar />
-        <div className='App-right'>
+        <div className={`App-middle${openToggle ? '-open' : ''}`}>
           <Header />
           {routes.map((route, index) => (
-            // Render more <Route>s with the same paths as
-            // above, but different components this time.
             <Route
               key={index}
               path={route.to}
@@ -58,9 +57,17 @@ function App() {
             />
           ))}
         </div>
+        <div className={`App-right${openToggle ? '-open' : ''}`}>
+          <Account />
+        </div>
       </div>
     </Router>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    openToggle: state.openToggle,
+  }
+}
+export default connect(mapStateToProps)(App);

@@ -3,3 +3,9 @@ export const searchData = (input) => {
     dispatch({ type: 'SEARCH', payload: input })
   }
 }
+
+export const toggle = (toggle) => {
+  return (dispatch) => {
+    dispatch({ type: 'TOGGLE', payload: toggle })
+  }
+}

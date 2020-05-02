@@ -1,0 +1,20 @@
+.App {
+  display: flex;
+  text-align: center;
+}
+
+.App-middle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &-open {
+    width: calc(100% - 250px);
+  }
+}
+
+.App-right {
+  display: none;
+  &-open {
+    width: 250px;
+  }
+}

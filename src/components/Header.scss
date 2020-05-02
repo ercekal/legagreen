@@ -2,11 +2,13 @@
   height: 60px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 80px;
   align-items: center;
-  width: calc(100% - 60px);
   font-size: 32px;
   font-weight: 500;
   padding: 10px 0 10px 30px;
+  color: darkblue;
   &-right {
     display: flex;
     align-items: center;
