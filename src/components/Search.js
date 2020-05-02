@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import SearchIcon from '@material-ui/icons/Search';
 import { searchData } from '../store/actions'
@@ -35,3 +36,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(Search)
+
+Search.propTypes = {
+  onSearchData: PropTypes.func
+}

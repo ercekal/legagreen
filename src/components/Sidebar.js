@@ -4,6 +4,7 @@ import {
   withRouter,
   useLocation
 } from "react-router-dom";
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Dashboard,
   OpenInBrowser,
@@ -13,9 +14,9 @@ import { Dashboard,
   Settings,
   SettingsInputComponent,
 } from '@material-ui/icons';
-import './Sidebar.scss'
 import Logo from '../logo.png'
-import { toggle } from '../store/actions'
+import { toggleSidebar } from '../store/actions'
+import './Sidebar.scss'
 
 const style = { fontSize: 40, color: 'gray', padding: '10px 0' }
 const routes = [
@@ -60,7 +61,7 @@ const IconRoute = ({icon, to}) => {
   )
 }
 
-const Sidebar = ({onToggle}) => {
+const Sidebar = ({onToggleSidebar}) => {
   return (
     <div className='Sidebar'>
       <div className='Sidebar-top'>
@@ -71,7 +72,7 @@ const Sidebar = ({onToggle}) => {
       </div>
       <div className='Sidebar-bottom'>
         {/* opens the account sidebar  when clicked */}
-        <div className='Sidebar-account' onClick={onToggle}/>
+        <div className='Sidebar-account' onClick={onToggleSidebar}/>
       </div>
     </div>
   )
@@ -79,8 +80,12 @@ const Sidebar = ({onToggle}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onToggle: () => dispatch(toggle())
+    onToggleSidebar: () => dispatch(toggleSidebar())
   }
 }
 
 export default connect(null, mapDispatchToProps)(withRouter(Sidebar))
+
+Sidebar.propTypes = {
+  onToggleSidebar: PropTypes.func
+}

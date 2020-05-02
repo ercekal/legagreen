@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from "react-router-dom";
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Avatar from '../avatar.png'
 import Card from './Card'
@@ -59,3 +60,7 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(withRouter(Page))
+
+Card.propTypes = {
+  searchInput: PropTypes.func
+}

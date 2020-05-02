@@ -4,8 +4,8 @@ export const searchData = (input) => {
   }
 }
 
-export const toggle = (toggle) => {
+export const toggleSidebar = () => {
   return (dispatch) => {
-    dispatch({ type: 'TOGGLE', payload: toggle })
+    dispatch({ type: 'TOGGLE' })
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './Card.scss'
 
 const Card = ({info: {title, type, text, author, image}}) => {
@@ -19,3 +20,13 @@ const Card = ({info: {title, type, text, author, image}}) => {
 };
 
 export default Card;
+
+Card.propTypes = {
+  info: PropTypes.shape({
+    title: PropTypes.string,
+    type: PropTypes.string,
+    author: PropTypes.string,
+    text: PropTypes.string,
+    image: PropTypes.string
+  })
+}
