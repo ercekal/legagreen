@@ -5,8 +5,8 @@ const Account = () => {
   return (
     <div className='Account'>
       <div className='Account-top'>
-        <div className='Account-top'>
-          <div className='Account-name'>Martin</div>
+        <div className='Account-top-info'>
+          <div className='Account-name'>Hi Martin</div>
           <div className='Account-dept'>Dept</div>
         </div>
         <div className='Account-logo' />

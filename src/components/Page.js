@@ -43,7 +43,10 @@ const Page = ({searchInput}) => {
 });
   return (
     <div className='Page'>
-      {results.map((info, i) => <Card info={info} key={i}/>)}
+      {
+        results.length > 0 ? results.map((info, i) => <Card info={info} key={i}/>)
+        : <p className='Page-noItem'>There is no suitable item.</p>
+      }
     </div>
   );
 };

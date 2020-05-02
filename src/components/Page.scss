@@ -4,4 +4,7 @@
   margin-left: 80px;
   display: flex;
   flex-wrap: wrap;
+  &-noItem {
+    padding: 20px;
+  }
 }

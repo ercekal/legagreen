@@ -2,7 +2,53 @@
   position: fixed;
   right:0;
   top: 0;
-  width: 250px;
+  width: calc(100% - 80px);
+  @media screen and (min-width: 500px) {
+    width: 250px;
+  }
   height: 100%;
-  background-color: #333;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset 0px 0 15px 0 gray;
+  &-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+    &-info {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &-name {
+    font-size: 24px;
+    font-weight: bolder;
+    color: darkblue;
+  }
+  &-dept {
+    font-size: 14px;
+    font-weight: 300;
+    color: blue;
+  }
+  &-logo {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 8px;
+    margin-left: 20px;
+  }
+  button {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    background: blue;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 }
